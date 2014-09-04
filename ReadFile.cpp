@@ -15,18 +15,18 @@ ReadFile* createReadFile(const char* file_name)
    return rf;
 }
 
-void destroyReadFile(ReadFile* rf)
+void destroyReadFile()
 {
    close(rf);
    delete rf;
 }
 
-bool eof(ReadFile* rf)
+bool eof()
 {
    return rf->_eof;
 }
 
-void close(ReadFile* rf)
+void close()
 {
    if (!rf->closed)
    {
@@ -35,7 +35,7 @@ void close(ReadFile* rf)
    }
 }
 
-String* readLine(ReadFile* rf)
+String* readLine()
 {
    if (rf->closed) return NULL;
    if (rf->_eof) return NULL;
