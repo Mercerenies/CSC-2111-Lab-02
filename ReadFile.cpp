@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 
-//Moist Towlettes
-
 ReadFile::ReadFile(const char* file_name)
 {
    input_file.open(file_name);
