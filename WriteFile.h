@@ -6,20 +6,20 @@
 #include <fstream>
 using namespace std;
 
+///A simple wrapper class for writing to files
 class WriteFile {
 private:
     ofstream output_file;
     bool closed;
 public:
+    ///Create a WriteFile
     WriteFile(const char* file_name);
+    ///Close and destruct a WriteFile
     virtual ~WriteFile();
+    ///Write a line to the file
     void writeLine(String* line);
+    ///Close the file
     void close();
 };
-
-WriteFile* createWriteFile(const char* file_name);
-void destroyWriteFile(WriteFile* wf);
-void writeLine(WriteFile* wf, String* line);
-void close(WriteFile* wf);
 
 #endif
